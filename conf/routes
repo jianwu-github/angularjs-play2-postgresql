@@ -5,5 +5,18 @@
 # Home page
 GET     /                           controllers.Application.index
 
+# REST API
+GET     /companies                  controllers.CompanyApi.list
+GET     /companies/:id              controllers.CompanyApi.findBy(id: Int)
+POST    /companies                  controllers.CompanyApi.create
+PUT     /companies/:id              controllers.CompanyApi.update(id: Int)
+
+GET     /computers                  controllers.ComputerApi.list
+GET     /computers/:id              controllers.ComputerApi.findBy(id: Int)
+POST    /computers                  controllers.ComputerApi.create
+PUT     /computers/:id              controllers.ComputerApi.update(id: Int)
+
+GET     /companies/:id/computers    controllers.ComputerApi.findByManufacture(id: Int)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
