@@ -5,6 +5,12 @@
 # Home page
 GET     /                           controllers.Application.index
 
+# Partial About page
+GET     /about                      controllers.Application.about
+
+# Partial Preview Companies Page
+GET     /previewcompanies           controllers.Application.previewcompanies
+
 # REST API
 GET     /companies                  controllers.CompanyApi.list
 GET     /companies/:id              controllers.CompanyApi.findBy(id: Int)

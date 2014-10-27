@@ -1,0 +1,28 @@
+@(companyList: List[Company])
+
+<div>
+<h4>Companies(Preview)</h4>
+<table class="table table-hover table-striped table-bordered">
+  <thead>
+    <tr>
+      <td>Company ID</td>
+      <td>Company Name</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    
+  @for( company <- companyList ) {
+    <tr>
+      <td>@company.id</td>
+      <td>@company.name</td>
+      <td>
+         <a class="btn btn-primary" ui-sref="viewCompanyComputers({id:@company.id})">List of Computers</a>
+      </td>
+      
+    </tr>
+  }
+        
+  </tbody>
+</table>
+</div>
