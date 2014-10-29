@@ -8,7 +8,7 @@ import models._
 object Application extends Controller {
   val appTitle = "AngularJS UI with Play2 Demo App"
   
-  def index = Action {
+  def index(any: String) = Action {
     Ok(views.html.index(appTitle))
   }
   

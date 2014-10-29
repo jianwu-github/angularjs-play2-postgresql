@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                           controllers.Application.index(any = "none")
 
 # Partial About page
 GET     /about                      controllers.Application.about
@@ -26,3 +26,6 @@ GET     /companies/:id/computers    controllers.ComputerApi.findByManufacture(id
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# default redirect
+GET     /*any                           controllers.Application.index(any)
