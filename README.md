@@ -52,7 +52,7 @@ Play2 RESTful API Server is using [Slick](http://slick.typesafe.com/) to access 
 
 ####3. AngularJS Front-end
 
-The Home Page of Demo App is rendered with Play2 Scala HTML Templates with AngularJS (UI-Router), it has a "CompanyPreviews" Page shown as below:
+The Home Page of Demo App is rendered with Play2 Scala HTML Templates with AngularJS (UI-Router), it has a "CompanyPreviews" Page, which will use AngularJS $http to make REST API Call (/companies) to fetch and display a list of companies using AngularJS ngTable:
 
 ![](about_app/previewcompanies.png?raw=true)
 

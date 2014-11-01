@@ -1,0 +1,24 @@
+<h4>List of Companies</h4>
+
+<div ng-controller="GetCompanyList">
+<p><strong>Page:</strong> {{tableParams.page()}}</p>
+<p><strong>Count per page:</strong> {{tableParams.count()}}</p>
+<table ng-table="tableParams" class="table">
+    <thead>
+        <tr>
+            <td>Computer ID</td>
+            <td>Computer Name</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="company in $data">
+            <td>{{ company.id }}</td>
+            <td>{{ company.name }}</td>
+            <td>
+              <a class="btn btn-primary" ui-sref="viewCompanyComputers({id: company.id})">List of Computers</a>
+            </td>
+        </tr>        
+    </tbody>
+</table>
+</div>

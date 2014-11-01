@@ -1,6 +1,9 @@
 <h4>List of Computers</h4>
 
-<table class="table table-hover table-striped table-bordered">
+<div ng-controller="GetComputerList">
+<p><strong>Page:</strong> {{tableParams.page()}}</p>
+<p><strong>Count per page:</strong> {{tableParams.count()}}</p>
+<table ng-table="tableParams" class="table">
     <thead>
         <tr>
             <td>Computer ID</td>
@@ -8,11 +11,10 @@
         </tr>
     </thead>
     <tbody>
-    
-        <tr ng-repeat="computer in companyComputerList">
+        <tr ng-repeat="computer in $data">
             <td>{{ computer.id }}</td>
             <td>{{ computer.name }}</td>
-        </tr>
-        
+        </tr>        
     </tbody>
 </table>
+</div>
