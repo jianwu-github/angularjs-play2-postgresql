@@ -3,3 +3,9 @@
 .header_image img{ width:100%; }
 
 .ng-table { border: 1px solid #000; }
+
+body { 
+	margin-bottom: 40px;
+	margin-right: 5px;
+	margin-left: 5px; 
+}

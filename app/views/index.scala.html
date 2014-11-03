@@ -15,16 +15,20 @@
   <script src="@routes.Assets.at("javascripts/angularapp.js")" type="text/javascript"></script>
 </head>
 <body ng-app="AngularPlay2App">
-  <div class="header_image">
-    <img src="@routes.Assets.at("images/favicon.png")" height="100" width="570"/>
+<header class="masthead">
+  <div class="container">
+    <div class="row header_image">
+      <img src="@routes.Assets.at("images/favicon.png")" height="100" width="570"/>
+    </div>
   </div>
+</header>  
   
   <!-- NAVIGATION -->
   <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <a class="navbar-brand" ui-sref="#">@title</a>
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav navbar-right">
         <li><a ui-sref="home">Home</a></li>
         <li><a ui-sref="previewcompanies">Companies with Computers</a></li>
     </ul>
@@ -36,5 +40,11 @@
     <div ui-view></div>
   </div>
 
+  <div class = "navbar navbar-default navbar-fixed-bottom">	
+    <div class = "container">
+	  <p class = "navbar-text pull-left">Created By Jian Wu</p>
+      <a href = "https://github.com/jianwu-github/angularjs-play2-postgresql" class = "navbar-btn btn-primary btn pull-right">Fork me on GitHub</a>
+    </div>
+  </div>
 </body>
 </html>
