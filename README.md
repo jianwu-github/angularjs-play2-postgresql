@@ -52,11 +52,15 @@ Play2 RESTful API Server is using [Slick](http://slick.typesafe.com/) to access 
 
 ####3. AngularJS Front-end
 
-The Home Page of Demo App is rendered with Play2 Scala HTML Templates with AngularJS (UI-Router), it has a "CompanyPreviews" Page, which will use AngularJS $http to make REST API Call (/companies) to fetch and display a list of companies using AngularJS ngTable:
+The Home Page of Demo App is rendered with Play2 Scala HTML Templates with AngularJS (UI-Router), it has a "CompanyPreviews" Page, which will use AngularJS $http to make REST API Call (GET /companies) to fetch and display a list of companies using AngularJS ngTable:
 
 ![](about_app/previewcompanies.png?raw=true)
 
-When clicking on the "List of Computers" link, Demo App will use AngularJS $http to make REST API Call (/companies/:id/computers) to fetch and display a list of computers produced by associated company:
+When clicking on the "Add New Company" Button, A Modal "Create New Company" Dialog will pop up, and it'll make REST API Call (POST /companies) to create a new company in back-end db after clicking "Save" Button in Dialog:
+
+![](about_app/addnewcompany.png?raw=true)
+
+When clicking on the "List of Computers" link, Demo App will use AngularJS $http to make REST API Call (GET /companies/:id/computers) to fetch and display a list of computers produced by associated company:
 
 ![](about_app/company_computers.png?raw=true)
 

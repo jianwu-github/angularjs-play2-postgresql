@@ -1,8 +1,8 @@
 <h4>List of Companies</h4>
 
 <div ng-controller="GetCompanyList">
-<p><strong>Page:</strong> {{tableParams.page()}}</p>
-<p><strong>Count per page:</strong> {{tableParams.count()}}</p>
+<p class="pull-left"><strong>Page:</strong> {{tableParams.page()}} (<strong>Count per page:</strong> {{tableParams.count()}})</p>
+<a class="btn btn-success pull-right" data-toggle="modal" data-target="#newCompany">Add New Company</a>
 <table ng-table="tableParams" class="table">
     <thead>
         <tr>
@@ -21,4 +21,38 @@
         </tr>        
     </tbody>
 </table>
+<div id="newCompany" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Create New Company</h4>
+            </div>
+            <form class="form-horizontal" role="form">
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                      <div class="form-group">
+                          <label for="newCompanyName" class="col-sm-3 control-label">New Company</label>
+                          <div class="col-sm-6">    
+                               <input class="form-control" id="newCompanyName" type='text' ng-model="newCompany.name"/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="newCompanyId" class="col-sm-3 control-label">New Company Id</label>
+                          <div class="col-sm-6">
+                              <input class="form-control" id="newCompanyId" type='number' min="1" ng-model="newCompany.id"/>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <button type='submit' class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type='submit' class="btn btn-primary" data-dismiss="modal" data-ng-click="createCompany(newCompany);">Save</button>
+                        </div>
+                    </div>
+            </form>    
+        </div>
+    </div>
+</div>
 </div>

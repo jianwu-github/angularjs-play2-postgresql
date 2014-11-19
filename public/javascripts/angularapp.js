@@ -1,5 +1,18 @@
 var app = angular.module('AngularPlay2App', ['ui.router', 'ngResource', 'ngTable']);
 
+app.factory("services",['$http', function($http) {
+	var serviceBase = 'http://localhost:9000/companies'
+    var obj = {}
+	
+	obj.createCompany = function (newCompany) {
+		return $http.post(serviceBase, newCompany).then(function (results) {
+		    return results;
+		});
+	};
+	
+	return obj;
+}]);
+
 app.config(function($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise('/home');
@@ -20,8 +33,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })                
 });
 
-app.controller("GetCompanyList", function($scope, $stateParams, $http, ngTableParams) {
+app.controller("GetCompanyList", function($scope, $stateParams, $http, services, ngTableParams) {
 	var companyid = $stateParams.id
+	
+	$scope.newCompany = {id: 0, name: ''}
+	$scope.createCompany = function(newCompany) {
+		services.createCompany(newCompany);	 
+    };
+	
 	$http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
 	$http.get('http://localhost:9000/companies').
 	  success(function(data, status, headers, config) {
